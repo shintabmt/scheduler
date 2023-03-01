@@ -10,8 +10,8 @@ const startServer = () => {
   } catch (e) {
   }
 };
-cron.schedule("* * 1 * * *", function () {
-  console.debug("refresh progress");
+cron.schedule("0 1 * * *", function () {
+  console.debug("on schedule restart db at ", new Date());
   restartDbService();
 });
 startServer();
