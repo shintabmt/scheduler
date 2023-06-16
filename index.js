@@ -7,10 +7,9 @@ const startServer = () => {
     server = app.listen(8080, () => {
       console.debug(` Started at server`);
     });
-  } catch (e) {
-  }
+  } catch (e) {}
 };
-cron.schedule("0 1 * * *", function () {
+cron.schedule("0 1,12 * * *", function () {
   console.debug("on schedule restart db at ", new Date());
   restartDbService();
 });
